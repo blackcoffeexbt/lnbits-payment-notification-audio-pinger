@@ -35,7 +35,7 @@ def listen_to_sse():
                 for event in client.events():
                     if event.data:
                         message = json.loads(event.data)
-                        if message.get("status") == "success":
+                        if not message.get("pending"):
                             print(f"Received successful payment: {message}")
                             play_ping()
         except requests.exceptions.ReadTimeout:

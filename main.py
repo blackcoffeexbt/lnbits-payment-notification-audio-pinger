@@ -7,10 +7,8 @@ import sseclient
 import pygame
 import requests
 
-# Load environment variables from .env
 load_dotenv()
 
-# Constants
 LNBITS_HOST = os.getenv("LNBITS_HOST")
 API_KEY = os.getenv("API_KEY")
 SSE_ENDPOINT = f"{LNBITS_HOST}/api/v1/payments/sse?api-key={API_KEY}"

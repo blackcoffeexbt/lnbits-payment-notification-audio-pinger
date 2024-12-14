@@ -61,7 +61,7 @@ After=network.target
 [Service]
 User=<your_username>
 WorkingDirectory=<path_to_project>
-ExecStart=<path_to_project>/venv/bin/python <path_to_project>/sse_payment_listener.py
+ExecStart=<path_to_project>/venv/bin/python <path_to_project>/main.py
 Restart=always
 
 [Install]

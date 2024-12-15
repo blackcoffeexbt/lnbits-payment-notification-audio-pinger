@@ -4,6 +4,7 @@ import json
 import time
 from dotenv import load_dotenv
 import sseclient
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame
 import requests
 
@@ -27,7 +28,7 @@ def listen_to_sse():
     """Connect to the SSE endpoint and process messages."""
     while True:
         try:
-            print(f"Connecting to SSE endpoint: {SSE_ENDPOINT}")
+            print(f"Connecting to SSE endpoint on {LNBITS_HOST}")
             # Use requests to handle response encoding explicitly
             with requests.get(SSE_ENDPOINT, stream=True, timeout=30) as response:
                 response.encoding = 'utf-8'
